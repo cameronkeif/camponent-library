@@ -5,7 +5,7 @@ module.exports = {
     project: './tsconfig.json'
   },
   plugins: ['react', 'import', '@typescript-eslint'],
-  extends: ["airbnb-typescript", "plugin:storybook/recommended"],
+  extends: ["airbnb-typescript"],
   rules: {
     // Fix typescript error around "'React' was used before it was defined".
     // See https://stackoverflow.com/questions/63818415/react-was-used-before-it-was-defined/64024916#64024916
