@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Counter from './components/Counter';
 import Modal from './components/Modal';
 import './App.css';
+import Countdown from './components/Countdown';
+import Countfrom from './components/Countfrom';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -12,6 +14,12 @@ function App() {
     alert('Confirmed!');
     toggleIsModalOpen();
   };
+
+  const countdownDate = new Date();
+  countdownDate.setDate(countdownDate.getDate() + 1);
+
+  const countfromDate = new Date();
+  countfromDate.setDate(countdownDate.getDate() - 1);
 
   return (
     <div className="App">
@@ -29,6 +37,8 @@ function App() {
         <button onClick={toggleIsModalOpen}>Toggle Modal</button>
       </div>
       <Counter />
+      <Countdown targetDate={countdownDate}/>
+      <Countfrom targetDate={countfromDate}/>
     </div>
   );
 }
